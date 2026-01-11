@@ -1,0 +1,64 @@
+PANDUAN INSTALASI & MENJALANKAN APLIKASI RINJANI MARKET
+
+Berikut adalah langkah-langkah mudah untuk menjalankan aplikasi ini di laptop lain (Laptop Teman).
+
+---------------------------------------------------------------------
+LANGKAH 1: PERSIAPAN DATABASE (WAJIB)
+---------------------------------------------------------------------
+1. Pastikan aplikasi XAMPP sudah terinstall dan dijalankan.
+2. Klik tombol "Start" pada modul "Apache" dan "MySQL" di XAMPP Control Panel.
+3. Buka browser dan kunjungi: http://localhost/phpmyadmin
+4. Klik tab "Import" di bagian atas.
+5. Klik tombol "Choose File" (Pilih File).
+6. Cari dan pilih file "db_penjualan_lokal.sql" yang ada di dalam folder proyek ini.
+7. Klik tombol "Go" atau "Kirim" di bagian bawah.
+   (Database bernama "db_penjualan_lokal" akan otomatis dibuat).
+
+---------------------------------------------------------------------
+LANGKAH 2: KONFIGURASI KONEKSI (Jika Diperlukan)
+---------------------------------------------------------------------
+Secara default, aplikasi ini disetting untuk password database: "12345".
+Jika XAMPP teman Anda menggunakan password kosong (default XAMPP), lakukan ini:
+
+1. Buka folder: app/config/
+2. Buka file: config.php (Gunakan Notepad atau Text Editor lain).
+3. Cari baris: define('DB_PASS', '12345');
+4. Ubah menjadi: define('DB_PASS', '');  <-- Kosongkan jika tanpa password
+5. Simpan file.
+
+---------------------------------------------------------------------
+LANGKAH 3: MENJALANKAN APLIKASI
+---------------------------------------------------------------------
+Ada 2 cara untuk menjalankan aplikasi:
+
+CARA A (PALING MUDAH - REKOMENDASI):
+1. Pastikan folder proyek ini sudah di-extract (jangan di dalam ZIP).
+2. Cari file bernama "JALANKAN_APLIKASI.bat" di folder utama.
+3. Klik 2x file tersebut.
+4. Aplikasi akan otomatis terbuka di browser.
+   (Jangan tutup jendela hitam/terminal yang muncul agar aplikasi tetap berjalan).
+
+   Alternatif via Terminal:
+   Jika Anda lebih suka menggunakan Command Prompt/Terminal, cukup buka folder ini di terminal dan ketik:
+   php -S localhost:8080 -t public
+   Lalu buka browser ke: http://localhost:8080
+
+CARA B (CARA MANUAL XAMPP):
+1. Pindahkan folder proyek ini ke dalam folder "htdocs" di instalasi XAMPP.
+   (Biasanya di C:\xampp\htdocs\Sistem Penjualan Online Produk Lokal).
+2. Buka file app/config/config.php
+3. Ubah BASEURL menjadi: define('BASEURL', 'http://localhost/Sistem Penjualan Online Produk Lokal/public');
+4. Buka browser dan kunjungi: http://localhost/Sistem Penjualan Online Produk Lokal/public
+
+---------------------------------------------------------------------
+AKUN LOGIN DEFAULT
+---------------------------------------------------------------------
+Untuk masuk sebagai Admin:
+Username: admin
+Password: admin123
+
+Untuk masuk sebagai Pelanggan:
+Username: fadli123
+Password: fadli1212
+
+Selamat Mencoba!
